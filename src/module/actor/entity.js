@@ -291,13 +291,25 @@ export class AcksActor extends Actor {
   rollCheck(score, options = {}) {
     const label = game.i18n.localize(`ACKS.scores.${score}.long`);
     const rollParts = ["1d20"];
+    
+    let roll;
+    if (game.settings.get("acks", "actn")) {
+      const target = game.settings.get("acks", "actnv");
+      const multiplier = game.settings.get("acks", "actnm");
+      roll = {
+        type: "above",
+        target: target - this.data.data.scores[score].mod * multiplier,
+      };
+    } else {
+      roll = {
+        type: "check",
+        target: this.data.data.scores[score].value,
+      };
+    }    
 
     const data = {
       actor: this.data,
-      roll: {
-        type: "check",
-        target: this.data.data.scores[score].value,
-      },
+      roll: roll,
 
       details: game.i18n.format("ACKS.roll.details.attribute", {
         score: label,

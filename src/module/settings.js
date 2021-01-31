@@ -76,4 +76,34 @@ export const registerSettings = function () {
     config: true,
     onChange: _ => window.location.reload()
   });
+
+  game.settings.register("acks", "actn", {
+    name: game.i18n.localize("ACKS.Setting.ACTN"),
+    hint: game.i18n.localize("ACKS.Setting.ACTNHint"),
+    default: false,
+    scope: "world",
+    type: Boolean,
+    config: true,
+    onChange: _ => window.location.reload()
+  });
+
+  game.settings.register("acks", "actnv", {
+    name: game.i18n.localize("ACKS.Setting.ACTNV"),
+    hint: game.i18n.localize("ACKS.Setting.ACTNVHint"),
+    default: 18,
+    scope: "world",
+    type: Number,
+    config: true,
+    onChange: _ => window.location.reload()
+  });
+
+  game.settings.register("acks", "actnm", {
+    name: game.i18n.localize("ACKS.Setting.ACTNM"),
+    hint: game.i18n.localize("ACKS.Setting.ACTNMHint"),
+    default: 4,
+    scope: "world",
+    type: Number,
+    config: true,
+    onChange: _ => window.location.reload()
+  });
 }
