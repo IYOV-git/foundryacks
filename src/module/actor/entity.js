@@ -290,7 +290,11 @@ export class AcksActor extends Actor {
 
   rollCheck(score, options = {}) {
     const label = game.i18n.localize(`ACKS.scores.${score}.long`);
-    const rollParts = ["1d20"];
+    
+    let rollParts = ["1d20"];
+    if (game.settings.get("acks", "exploding20s")) {
+      rollParts = ["1d20x="];
+    }
     
     let roll;
     if (game.settings.get("acks", "abit")) {
