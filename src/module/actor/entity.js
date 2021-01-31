@@ -293,9 +293,9 @@ export class AcksActor extends Actor {
     const rollParts = ["1d20"];
     
     let roll;
-    if (game.settings.get("acks", "actn")) {
-      const target = game.settings.get("acks", "actnv");
-      const multiplier = game.settings.get("acks", "actnm");
+    if (game.settings.get("acks", "abit")) {
+      const target = game.settings.get("acks", "abitv");
+      const multiplier = game.settings.get("acks", "abitm");
       roll = {
         type: "above",
         target: target - this.data.data.scores[score].mod * multiplier,

@@ -77,9 +77,9 @@ export const registerSettings = function () {
     onChange: _ => window.location.reload()
   });
 
-  game.settings.register("acks", "actn", {
-    name: game.i18n.localize("ACKS.Setting.ACTN"),
-    hint: game.i18n.localize("ACKS.Setting.ACTNHint"),
+  game.settings.register("acks", "abit", {
+    name: game.i18n.localize("ACKS.Setting.ABIT"),
+    hint: game.i18n.localize("ACKS.Setting.ABITHint"),
     default: false,
     scope: "world",
     type: Boolean,
@@ -87,9 +87,9 @@ export const registerSettings = function () {
     onChange: _ => window.location.reload()
   });
 
-  game.settings.register("acks", "actnv", {
-    name: game.i18n.localize("ACKS.Setting.ACTNV"),
-    hint: game.i18n.localize("ACKS.Setting.ACTNVHint"),
+  game.settings.register("acks", "abitv", {
+    name: game.i18n.localize("ACKS.Setting.ABITV"),
+    hint: game.i18n.localize("ACKS.Setting.ABITVHint"),
     default: 18,
     scope: "world",
     type: Number,
@@ -97,10 +97,10 @@ export const registerSettings = function () {
     onChange: _ => window.location.reload()
   });
 
-  game.settings.register("acks", "actnm", {
-    name: game.i18n.localize("ACKS.Setting.ACTNM"),
-    hint: game.i18n.localize("ACKS.Setting.ACTNMHint"),
-    default: 4,
+  game.settings.register("acks", "abitm", {
+    name: game.i18n.localize("ACKS.Setting.ABITM"),
+    hint: game.i18n.localize("ACKS.Setting.ABITMHint"),
+    default: 3,
     scope: "world",
     type: Number,
     config: true,
