@@ -87,25 +87,23 @@ export const registerSettings = function () {
     onChange: _ => window.location.reload()
   });
 
-  if (game.settings.get("acks", "abit")) {
-    game.settings.register("acks", "abitv", {
-      name: game.i18n.localize("ACKS.Setting.ABITV"),
-      hint: game.i18n.localize("ACKS.Setting.ABITVHint"),
-      default: 18,
-      scope: "world",
-      type: Number,
-      config: true,
-      onChange: _ => window.location.reload()
-    });
+  game.settings.register("acks", "abitv", {
+    name: game.i18n.localize("ACKS.Setting.ABITV"),
+    hint: game.i18n.localize("ACKS.Setting.ABITVHint"),
+    default: 18,
+    scope: "world",
+    type: Number,
+    config: true,
+    onChange: _ => window.location.reload()
+  });
 
-    game.settings.register("acks", "abitm", {
-      name: game.i18n.localize("ACKS.Setting.ABITM"),
-      hint: game.i18n.localize("ACKS.Setting.ABITMHint"),
-      default: 3,
-      scope: "world",
-      type: Number,
-      config: true,
-      onChange: _ => window.location.reload()
-    });
-  }
+  game.settings.register("acks", "abitm", {
+    name: game.i18n.localize("ACKS.Setting.ABITM"),
+    hint: game.i18n.localize("ACKS.Setting.ABITMHint"),
+    default: 3,
+    scope: "world",
+    type: Number,
+    config: true,
+    onChange: _ => window.location.reload()
+  });
 }
